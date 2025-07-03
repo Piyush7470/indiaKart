@@ -43,7 +43,7 @@ export function Footer() {
                 All Products
               </Link>
               <Link href="/offers" className="block text-gray-300 hover:text-white transition-colors">
-                Today's Deals
+                Today&apos;s Deals
               </Link>
               <Link href="/brands" className="block text-gray-300 hover:text-white transition-colors">
                 Top Brands

@@ -1,5 +1,7 @@
 import { Product } from './store';
 
+export type { Product };
+
 export const categories = [
   'Electronics',
   'Fashion',

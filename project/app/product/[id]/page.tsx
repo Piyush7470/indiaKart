@@ -12,6 +12,7 @@ import { Star, Heart, ShoppingCart, Truck, Shield, RotateCcw, Award } from 'luci
 import { useStore } from '@/lib/store';
 import { sampleProducts, formatPrice, getDiscountPercentage } from '@/lib/products';
 import { toast } from 'sonner';
+import Image from 'next/image';
 
 export default function ProductPage() {
   const params = useParams();
@@ -31,7 +32,7 @@ export default function ProductPage() {
         <main className="container mx-auto px-4 py-8">
           <div className="text-center">
             <h1 className="text-2xl font-bold mb-4">Product Not Found</h1>
-            <p className="text-muted-foreground">The product you're looking for doesn't exist.</p>
+            <p className="text-muted-foreground">The product you&apos;re looking for doesn&apos;t exist.</p>
           </div>
         </main>
         <Footer />
@@ -65,9 +66,11 @@ export default function ProductPage() {
           {/* Image Gallery */}
           <div className="space-y-4">
             <div className="aspect-square overflow-hidden rounded-lg border">
-              <img
+              <Image
                 src={productImages[selectedImage]}
                 alt={product.name}
+                width={500}
+                height={500}
                 className="w-full h-full object-cover"
               />
             </div>
@@ -80,9 +83,11 @@ export default function ProductPage() {
                     selectedImage === index ? 'border-blue-500' : 'border-gray-200'
                   }`}
                 >
-                  <img
+                  <Image
                     src={image}
                     alt={`${product.name} ${index + 1}`}
+                    width={100}
+                    height={100}
                     className="w-full h-full object-cover"
                   />
                 </button>

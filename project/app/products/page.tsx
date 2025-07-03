@@ -303,7 +303,7 @@ function ProductsContent() {
             {searchQuery && (
               <div className="mb-6 p-4 bg-blue-50 rounded-lg">
                 <p className="text-sm">
-                  Showing results for <strong>"{searchQuery}"</strong>
+                  Showing results for <strong>&quot;{searchQuery}&quot;</strong>
                 </p>
               </div>
             )}

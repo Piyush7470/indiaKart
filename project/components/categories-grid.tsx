@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { Card, CardContent } from '@/components/ui/card';
 import { categories } from '@/lib/products';
+import Image from 'next/image';
 
 const categoryImages = {
   'Electronics': 'https://images.pexels.com/photos/356056/pexels-photo-356056.jpeg',
@@ -29,9 +30,11 @@ export function CategoriesGrid() {
             <Card className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer">
               <CardContent className="p-0">
                 <div className="aspect-square overflow-hidden rounded-t-lg">
-                  <img
+                  <Image
                     src={categoryImages[category as keyof typeof categoryImages]}
                     alt={category}
+                    width={300}
+                    height={300}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                 </div>

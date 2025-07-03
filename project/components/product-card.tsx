@@ -9,6 +9,7 @@ import { Badge } from '@/components/ui/badge';
 import { useStore } from '@/lib/store';
 import { Product, formatPrice, getDiscountPercentage } from '@/lib/products';
 import { toast } from 'sonner';
+import Image from 'next/image';
 
 interface ProductCardProps {
   product: Product;
@@ -38,9 +39,11 @@ export function ProductCard({ product }: ProductCardProps) {
         <div className="relative">
           <Link href={`/product/${product.id}`}>
             <div className="aspect-square overflow-hidden rounded-t-lg">
-              <img
+              <Image
                 src={product.image}
                 alt={product.name}
+                width={300}
+                height={300}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
               />
             </div>

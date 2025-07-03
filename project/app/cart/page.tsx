@@ -11,6 +11,7 @@ import { Minus, Plus, Trash2, ShoppingBag, ArrowRight } from 'lucide-react';
 import { useStore } from '@/lib/store';
 import { formatPrice } from '@/lib/products';
 import { toast } from 'sonner';
+import Image from 'next/image';
 
 export default function CartPage() {
   const { cart, updateQuantity, removeFromCart, clearCart } = useStore();
@@ -53,7 +54,7 @@ export default function CartPage() {
             <ShoppingBag className="h-24 w-24 mx-auto text-muted-foreground" />
             <h1 className="text-3xl font-bold">Your cart is empty</h1>
             <p className="text-muted-foreground">
-              Looks like you haven't added anything to your cart yet.
+              Looks like you haven&apos;t added anything to your cart yet.
             </p>
             <Link href="/products">
               <Button className="bg-orange-500 hover:bg-orange-600 text-white">
@@ -90,9 +91,11 @@ export default function CartPage() {
                 <CardContent className="p-6">
                   <div className="flex items-start space-x-4">
                     <div className="w-20 h-20 rounded-lg overflow-hidden shrink-0">
-                      <img
+                      <Image
                         src={item.image}
                         alt={item.name}
+                        width={80}
+                        height={80}
                         className="w-full h-full object-cover"
                       />
                     </div>
